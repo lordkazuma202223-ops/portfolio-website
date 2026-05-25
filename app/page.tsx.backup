@@ -1,0 +1,287 @@
+import { GooeyText } from "@/components/GooeyTextMorphing";
+import AnimatedTextCycle from "@/components/ui/AnimatedTextCycle";
+
+export default function Home() {
+  return (
+    <div className="min-h-screen bg-black text-white overflow-hidden">
+      {/* Animated gradient background */}
+      <div className="fixed inset-0 -z-10">
+        <div className="absolute inset-0 bg-gradient-to-br from-violet-900/50 via-purple-900/50 to-fuchsia-900/50 animate-gradient" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(120,119,198,0.3),transparent_70%)]" />
+      </div>
+
+      {/* Grid pattern overlay */}
+      <div className="fixed inset-0 -z-5 opacity-10" style={{
+        backgroundImage: `linear-gradient(to right, #ffffff 1px, transparent 1px),
+                     linear-gradient(to bottom, #ffffff 1px, transparent 1px)`,
+        backgroundSize: '60px 60px'
+      }} />
+
+      <main className="relative z-10">
+        {/* Hero Section */}
+        <section className="min-h-screen flex items-center justify-center px-4 py-20">
+          <div className="max-w-6xl mx-auto">
+            <div className="flex flex-col lg:flex-row items-center gap-12">
+              {/* Profile Picture */}
+              <div className="flex-shrink-0">
+                <div className="relative group">
+                  <div className="absolute -inset-1 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 animate-spin-slow blur-xl opacity-50" style={{ animationDuration: '8s' }} />
+                  <div className="relative h-64 w-64 overflow-hidden rounded-full border-4 border-white/20 bg-gradient-to-br from-purple-500/10 to-pink-500/10 backdrop-blur-sm">
+                    {/* Placeholder profile image - replace with actual image */}
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <span className="text-6xl">🎤</span>
+                    </div>
+                    {/* Decorative ring */}
+                    <div className="absolute inset-0 rounded-full border-4 border-gradient-to-br from-purple-500/50 to-pink-500/50" />
+                  </div>
+                  {/* Glow effect */}
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-br from-purple-400/20 to-pink-400/20 blur-2xl -z-10" />
+                </div>
+              </div>
+
+              <div className="flex-1 text-center lg:text-left">
+                <div className="space-y-8">
+                  <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight">
+                    <span className="text-gray-400">Hi, I'm </span>
+                    <span className="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 bg-clip-text text-transparent">
+                      Miku
+                    </span>
+                  </h1>
+
+                  <div className="min-h-[120px] py-6">
+                    <GooeyText
+                      texts={[
+                        "Creative Developer",
+                        "UI/UX Designer",
+                        "Problem Solver",
+                        "Innovation Builder",
+                      ]}
+                      className="text-3xl md:text-4xl lg:text-5xl font-bold"
+                      textClassName="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent"
+                      morphTime={2}
+                      cooldownTime={0.5}
+                    />
+                  </div>
+
+                  {/* Bio paragraph */}
+                  <div className="max-w-2xl space-y-4">
+                    <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
+                      I'm a passionate developer who transforms ideas into beautiful, functional digital experiences. With expertise in modern web technologies and a keen eye for design, I create solutions that not only work flawlessly but also delight users.
+                    </p>
+                    <p className="text-base md:text-lg text-gray-400 leading-relaxed">
+                      When I'm not coding, you'll find me exploring new frameworks, contributing to open source, or diving deep into UI/UX design patterns. I believe in continuous learning and pushing boundaries to create something truly special.
+                    </p>
+                    
+                    <a
+                      href="mailto:hello@example.com"
+                      className="group relative inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 px-10 py-4 font-semibold text-white transition-all hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/50"
+                    >
+                      Get in Touch
+                      <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 00-2.21-1.79-4-4h-1.084c-2.205 0-4-1.79-4 4v16c0 2.21 1.79 4 4h-1.418l-2.447-2.447-.744-.744-.237-.237h-8.918c-.138-.275-.021-.402-.065-.565-.124-.708-.226-.815-.424-.915-.715-.894-1.37-1.37-2.099-.25-3.275-.25-3.275h-1.418l-2.447-2.447-.744-.744-.237-.237.023.1.023.582.894.894-1.37-1.37-2.099-.25-3.275.25H3.557c-.138-.275-.021-.402-.065-.565-.124-.708-.226-.815-.424-.915-.715-.894-1.37-1.37-2.099-.25-3.275.25-3.275z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16.5 12.5a4.5 4.5 0 00-4.5-4.5h-1.084c-2.205 0-4-1.79-4 4v16c0 2.21 1.79 4 4h-1.418l-2.447-2.447-.744-.744-.237-.237.237.023.1.023.582.894.894-1.37-1.37-2.099-.25-3.275.25H3.557c-.138-.275-.021-.402-.065-.565-.124-.708-.226-.815-.424-.915-.715-.894-1.37-1.37-2.099-.25-3.275.25-3.275z" />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Projects Section */}
+        <section id="projects" className="py-32 px-4">
+          <div className="max-w-7xl mx-auto">
+            <div className="mb-16 text-center">
+              <h2 className="text-4xl md:text-5xl font-bold mb-4">
+                <span className="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
+                  Featured Work
+                </span>
+              </h2>
+              <div className="h-1 w-24 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mx-auto" />
+            </div>
+
+            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+              {[
+                {
+                  title: "Gooey Text Morphing",
+                  description: "Interactive text morphing with liquid SVG filters and smooth blur transitions",
+                  tags: ["React", "SVG Filters", "TypeScript"],
+                  gradient: "from-purple-500 to-pink-500"
+                },
+                {
+                  title: "Animated Text Cycle",
+                  description: "Dynamic word cycling with spring animations and blur effects",
+                  tags: ["Framer Motion", "React", "TypeScript"],
+                  gradient: "from-blue-500 to-cyan-500"
+                },
+                {
+                  title: "Portfolio v2",
+                  description: "Modern portfolio featuring cutting-edge animations and gradients",
+                  tags: ["Next.js", "Tailwind CSS", "Framer Motion"],
+                  gradient: "from-pink-500 to-red-500"
+                },
+                {
+                  title: "Dashboard Pro",
+                  description: "Real-time analytics dashboard with data visualization",
+                  tags: ["React", "D3.js", "Node.js"],
+                  gradient: "from-cyan-500 to-purple-500"
+                },
+                {
+                  title: "E-Commerce Platform",
+                  description: "Full-stack shopping platform with payment integration",
+                  tags: ["Next.js", "Stripe", "PostgreSQL"],
+                  gradient: "from-purple-500 to-blue-500"
+                },
+                {
+                  title: "AI Chat Interface",
+                  description: "Intelligent chatbot with natural language processing",
+                  tags: ["Python", "OpenAI", "WebSocket"],
+                  gradient: "from-pink-500 to-purple-500"
+                },
+              ].map((project, index) => (
+                <div
+                  key={index}
+                  className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm transition-all hover:scale-[1.02] hover:shadow-2xl hover:shadow-purple-500/20 hover:bg-white/10"
+                >
+                  <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-0 transition-opacity group-hover:opacity-10`} />
+                  
+                  <div className="relative p-8">
+                    <h3 className="text-2xl font-bold mb-3 text-white group-hover:text-purple-200 transition-colors">
+                      {project.title}
+                    </h3>
+                    <p className="mb-6 text-gray-300 leading-relaxed">
+                      {project.description}
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {project.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="rounded-full bg-white/10 px-4 py-1.5 text-sm font-medium text-purple-200 backdrop-blur-sm"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Skills Section */}
+        <section className="py-32 px-4 bg-gradient-to-b from-transparent via-purple-900/20 to-transparent">
+          <div className="max-w-7xl mx-auto">
+            <div className="mb-16 text-center">
+              <h2 className="text-4xl md:text-5xl font-bold mb-4">
+                <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
+                  Skills & Expertise
+                </span>
+              </h2>
+              <div className="h-1 w-24 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-full mx-auto" />
+            </div>
+
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              {[
+                { name: "React / Next.js", icon: "⚛️" },
+                { name: "TypeScript", icon: "📘" },
+                { name: "Tailwind CSS", icon: "🎨" },
+                { name: "Framer Motion", icon: "✨" },
+                { name: "Node.js", icon: "💚" },
+                { name: "UI/UX Design", icon: "🎯" },
+                { name: "Git & DevOps", icon: "🔧" },
+                { name: "Performance", icon: "⚡" },
+              ].map((skill, index) => (
+                <div
+                  key={index}
+                  className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm transition-all hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20 hover:bg-white/10"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-pink-500/20 opacity-0 transition-opacity group-hover:opacity-10" />
+                  
+                  <div className="relative p-6 text-center">
+                    <div className="text-4xl mb-2 transform transition-transform group-hover:scale-110">
+                      {skill.icon}
+                    </div>
+                    <span className="text-lg font-semibold text-purple-200 group-hover:text-purple-100 transition-colors">
+                      {skill.name}
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Stats Section */}
+        <section className="py-32 px-4">
+          <div className="max-w-7xl mx-auto">
+            <div className="grid gap-8 md:grid-cols-3">
+              {[
+                { value: "5+", label: "Years Experience" },
+                { value: "50+", label: "Projects Completed" },
+                { value: "100%", label: "Client Satisfaction" },
+              ].map((stat, index) => (
+                <div
+                  key={index}
+                  className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm text-center"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-pink-500/10" />
+                  
+                  <div className="relative p-8">
+                    <div className="text-6xl md:text-7xl font-bold bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
+                      {stat.value}
+                    </div>
+                    <p className="mt-2 text-lg text-gray-300">
+                      {stat.label}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Contact Section - Minimal */}
+        <section id="contact" className="py-32 px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              <span className="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
+                Let's Connect
+              </span>
+            </h2>
+            <div className="h-1 w-24 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mx-auto mb-12" />
+            
+            <p className="max-w-2xl mx-auto mb-12 text-lg md:text-xl text-gray-300 leading-relaxed">
+              Interested in working together? Let's build something amazing together.
+            </p>
+
+            <a
+              href="mailto:hello@example.com"
+              className="group relative inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 px-10 py-4 font-semibold text-white transition-all hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/50"
+            >
+              <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 00-2.21-1.79-4-4h-1.084c-2.205 0-4-1.79-4 4v16c0 2.21 1.79 4 4h-1.418l-2.447-2.447-.744-.744-.237-.237h-8.918c-.138-.275-.021-.402-.065-.565-.124-.708-.226-.815-.424-.915-.715-.894-1.37-1.37-2.099-.25-3.275.25H3.557c-.138-.275-.021-.402-.065-.565-.124-.708-.226-.815-.424-.915-.715-.894-1.37-1.37-2.099-.25-3.275.25-3.275z" />
+              </svg>
+            </a>
+          </div>
+        </section>
+
+        {/* Footer */}
+        <footer className="border-t border-white/10 bg-black/50 backdrop-blur-sm py-12 text-center">
+          <div className="max-w-7xl mx-auto px-4">
+            <p className="text-sm text-gray-400">
+              Crafted with{" "}
+              <span className="text-purple-400">Next.js</span>,{" "}
+              <span className="text-pink-400">Tailwind CSS</span>, and{" "}
+              <span className="text-cyan-400">Framer Motion</span>
+            </p>
+            <p className="text-xs text-gray-500 mt-2">
+              © 2026 Miku. All rights reserved.
+            </p>
+          </div>
+        </footer>
+      </main>
+    </div>
+  );
+}

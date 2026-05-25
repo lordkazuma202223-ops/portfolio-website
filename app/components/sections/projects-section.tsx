@@ -1,0 +1,107 @@
+interface Project {
+  title: string;
+  description: string;
+  tags: string[];
+  gradient: string;
+}
+
+const projects: Project[] = [
+  {
+    title: "Gooey Text Morphing",
+    description: "Interactive text morphing with liquid SVG filters and smooth blur transitions",
+    tags: ["React", "SVG Filters", "TypeScript"],
+    gradient: "from-purple-500 to-pink-500",
+  },
+  {
+    title: "Animated Text Cycle",
+    description: "Dynamic word cycling with spring animations and blur effects",
+    tags: ["Framer Motion", "React", "TypeScript"],
+    gradient: "from-blue-500 to-cyan-500",
+  },
+  {
+    title: "Portfolio v2",
+    description: "Modern portfolio featuring cutting-edge animations and gradients",
+    tags: ["Next.js", "Tailwind CSS", "Framer Motion"],
+    gradient: "from-pink-500 to-red-500",
+  },
+  {
+    title: "Dashboard Pro",
+    description: "Real-time analytics dashboard with data visualization",
+    tags: ["React", "D3.js", "Node.js"],
+    gradient: "from-cyan-500 to-purple-500",
+  },
+  {
+    title: "E-Commerce Platform",
+    description: "Full-stack shopping platform with payment integration",
+    tags: ["Next.js", "Stripe", "PostgreSQL"],
+    gradient: "from-purple-500 to-blue-500",
+  },
+  {
+    title: "AI Chat Interface",
+    description: "Intelligent chatbot with natural language processing",
+    tags: ["Python", "OpenAI", "WebSocket"],
+    gradient: "from-pink-500 to-purple-500",
+  },
+];
+
+export function ProjectsSection() {
+  return (
+    <section id="projects" className="py-32 px-4 relative overflow-hidden" aria-labelledby="projects-heading">
+      {/* Projects background */}
+      <div className="absolute inset-0 -z-10" aria-hidden="true">
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/30 via-purple-900/20 to-pink-900/30" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-pink-500/10 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-purple-500/10 via-transparent to-transparent" />
+        {/* Diagonal lines pattern */}
+        <div
+          className="absolute inset-0 opacity-5"
+          style={{
+            backgroundImage: `linear-gradient(45deg, #ffffff 1px, transparent 1px)`,
+            backgroundSize: "80px 80px",
+          }}
+        />
+      </div>
+
+      <div className="max-w-7xl mx-auto relative z-10">
+        <div className="mb-16 text-center">
+          <h2 id="projects-heading" className="text-4xl md:text-5xl font-bold mb-4">
+            <span className="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
+              Featured Work
+            </span>
+          </h2>
+          <div className="h-1 w-24 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mx-auto" />
+        </div>
+
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3" role="list">
+          {projects.map((project, index) => (
+            <article
+              key={index}
+              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm transition-all hover:scale-[1.02] hover:shadow-2xl hover:shadow-purple-500/20 hover:bg-white/10"
+              role="listitem"
+            >
+              <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-20 transition-opacity group-hover:opacity-40`} aria-hidden="true" />
+
+              <div className="relative p-8">
+                <h3 className="text-2xl font-bold mb-3 text-white group-hover:text-purple-200 transition-colors">
+                  {project.title}
+                </h3>
+                <p className="mb-6 text-gray-300 leading-relaxed">{project.description}</p>
+                <div className="flex flex-wrap gap-2" role="list" aria-label="Technologies used">
+                  {project.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="rounded-full bg-white/10 px-4 py-1.5 text-sm font-medium text-purple-200 backdrop-blur-sm"
+                      role="listitem"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
