@@ -19,7 +19,7 @@ const sections = [
 ];
 
 export default function PortfolioNav() {
-  const tabs = [
+  const tabs: any[] = [
     { title: "Home", icon: HomeIcon },
     { type: "separator" },
     { title: "About Me", icon: User },
@@ -34,15 +34,17 @@ export default function PortfolioNav() {
   ];
 
   const handleTabChange = (index: number | null) => {
-    const element = document.getElementById(sections[index]?.id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (index !== null) {
+      const element = document.getElementById(sections[index]?.id);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
     }
   };
 
   return (
     <ExpandableTabs
-      tabs={tabs}
+      tabs={tabs as any}
       activeColor="text-purple-400"
       className="border-white/10 dark:border-white/10"
       onChange={handleTabChange}

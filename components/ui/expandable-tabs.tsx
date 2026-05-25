@@ -66,12 +66,12 @@ export function ExpandableTabs({
   onChange,
 }: ExpandableTabsProps) {
   const [selected, setSelected] = React.useState<number | null>(null);
-  const outsideClickRef = React.useRef(null);
+  // const outsideClickRef = React.useRef<HTMLElement>(null);
 
-  useOnClickOutside(outsideClickRef, () => {
-    setSelected(null);
-    onChange?.(null);
-  });
+  // useOnClickOutside(outsideClickRef, () => {
+  //   setSelected(null);
+  //   onChange?.(null);
+  // });
 
   const handleSelect = (index: number) => {
     setSelected(index);
@@ -84,13 +84,13 @@ export function ExpandableTabs({
 
   return (
     <div
-      ref={outsideClickRef}
+      // ref={outsideClickRef}
       className={cn(
         "flex flex-wrap items-center gap-2 rounded-2xl border bg-background p-1 shadow-sm",
         className
       )}
     >
-      {tabs.map((tab, index) => {
+      {tabs.map((tab: any, index) => {
         if (tab.type === "separator") {
           return <Separator key={`separator-${index}`} />;
         }

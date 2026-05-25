@@ -1,6 +1,7 @@
 "use client";
 
 import { ExpandableTabs } from "@/components/ui/expandable-tabs";
+import { Home, Briefcase, Wrench, User, Mail } from "lucide-react";
 
 interface NavigationProps {
   sections?: Array<{ id: string; label: string }>;
@@ -20,15 +21,15 @@ export default function Navigation({ sections: defaultSections }: NavigationProp
     <div className="fixed top-4 left-1/2 -translate-x-1/2 z-40">
       <ExpandableTabs
         tabs={[
-          { title: "Home" },
+          { title: "Home", icon: Home },
           { type: "separator" },
-          { title: "Projects" },
+          { title: "Projects", icon: Briefcase },
           { type: "separator" },
-          { title: "Skills" },
+          { title: "Skills", icon: Wrench },
           { type: "separator" },
-          { title: "About" },
+          { title: "About", icon: User },
           { type: "separator" },
-          { title: "Contact" },
+          { title: "Contact", icon: Mail },
         ]}
         activeColor="text-purple-400"
         onChange={(index) => {

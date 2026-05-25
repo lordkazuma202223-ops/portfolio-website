@@ -17,6 +17,7 @@ export default function AnimatedTextCycle({
 }: AnimatedTextCycleProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
+  const [width, setWidth] = useState<string | number>("auto");
   const measureRef = useRef<HTMLDivElement>(null);
 
   // Measure all words upfront to prevent layout thrashing
@@ -32,8 +33,6 @@ export default function AnimatedTextCycle({
       setWidth(wordWidths[currentIndex]);
     }
   }, [wordWidths, currentIndex]);
-
-  const [width, setWidth] = useState("auto");
 
   useEffect(() => {
     const timer = setInterval(() => {
