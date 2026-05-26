@@ -191,8 +191,8 @@ function FeatureCard({ step, steps, renderContent }: FeatureCardProps) {
       style={{ "--x": useMotionTemplate`${mouseX}px`, "--y": useMotionTemplate`${mouseY}px` } as WrapperStyle}
     >
       <div className="relative w-full overflow-hidden rounded-3xl border border-neutral-200 bg-white transition-colors duration-300 dark:border-neutral-800 dark:bg-neutral-900">
-        <div className="flex flex-col md:flex-row m-6 min-h-[500px] w-full gap-8">
-          <div className="flex w-full md:w-1/2 flex-col gap-4 justify-center">
+      <div className="flex flex-col m-6 min-h-[500px] w-full">
+          <div className="flex w-full flex-col gap-4 justify-center">
             <AnimatePresence mode="wait">
               <motion.div
                 key={step}
@@ -245,13 +245,6 @@ function FeatureCard({ step, steps, renderContent }: FeatureCardProps) {
                   </motion.div>
                 )}
               </motion.div>
-            </AnimatePresence>
-          </div>
-          <div className="w-full md:w-1/2 relative rounded-2xl overflow-hidden h-full">
-            <AnimatePresence mode="wait">
-                <motion.div key={step} {...ANIMATION_PRESETS.fadeInScale} className="w-full h-full">
-                    {renderContent()}
-                </motion.div>
             </AnimatePresence>
           </div>
         </div>
