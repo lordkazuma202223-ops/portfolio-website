@@ -188,11 +188,11 @@ function FeatureCard({ children, step, steps }: { children: React.ReactNode; ste
       style={{ "--x": useMotionTemplate`${mouseX}px`, "--y": useMotionTemplate`${mouseY}px` } as WrapperStyle}
     >
       <div className="relative w-full overflow-hidden rounded-3xl border border-neutral-200 bg-white transition-colors duration-300 dark:border-neutral-800 dark:bg-neutral-900">
-        <div className="m-10 min-h-[450px] w-full">
+        <div className="m-6 min-h-[400px] w-full">
           <AnimatePresence mode="wait">
             <motion.div
               key={step}
-              className="flex w-full flex-col gap-4 md:w-3/5"
+              className="flex w-full flex-col gap-4 md:w-1/2"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
@@ -273,12 +273,12 @@ function StepsNav({ steps: stepItems, current, onChange }: { steps: readonly Ste
 
 const defaultClasses = {
   img: "rounded-xl border border-neutral-200 dark:border-neutral-800 shadow-2xl shadow-black/10 dark:shadow-neutral-950/50",
-  step1img1: "w-[50%] left-0 top-[15%]",
-  step1img2: "w-[60%] left-[40%] top-[35%]",
-  step2img1: "w-[50%] left-[5%] top-[20%]",
-  step2img2: "w-[40%] left-[55%] top-[45%]",
-  step3img: "w-[90%] left-[5%] top-[25%]",
-  step4img: "w-[90%] left-[5%] top-[25%]",
+  step1img1: "w-[35%] left-5 top-[10%]",
+  step1img2: "w-[35%] right-5 top-[30%]",
+  step2img1: "w-[35%] left-5 top-[15%]",
+  step2img2: "w-[35%] right-5 top-[35%]",
+  step3img: "w-[70%] left-[15%] top-[15%]",
+  step4img: "w-[70%] left-[15%] top-[15%]",
 } as const
 
 export function FeatureCarousel({
@@ -347,7 +347,7 @@ export function FeatureCarousel({
   }
 
   return (
-    <div className="flex flex-col gap-12 w-full max-w-4xl mx-auto p-4">
+    <div className="flex flex-col gap-8 w-full max-w-4xl mx-auto p-4">
         <FeatureCard {...props} step={step} steps={steps}>
             <AnimatePresence mode="wait">
                 <motion.div key={step} {...ANIMATION_PRESETS.fadeInScale} className="w-full h-full absolute">
