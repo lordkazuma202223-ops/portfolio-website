@@ -247,9 +247,9 @@ function FeatureCard({ step, steps, renderContent }: FeatureCardProps) {
               </motion.div>
             </AnimatePresence>
           </div>
-          <div className="w-full md:w-1/2 relative rounded-2xl overflow-hidden h-full min-h-[400px]">
+          <div className="w-full md:w-1/2 relative rounded-2xl overflow-hidden flex-1 min-h-[500px]">
             <AnimatePresence mode="wait">
-                <motion.div key={step} {...ANIMATION_PRESETS.fadeInScale} className="w-full h-full">
+                <motion.div key={step} {...ANIMATION_PRESETS.fadeInScale} className="absolute inset-0">
                     {renderContent()}
                 </motion.div>
             </AnimatePresence>
