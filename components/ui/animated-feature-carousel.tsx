@@ -188,7 +188,7 @@ function FeatureCard({ children, step, steps }: { children: React.ReactNode; ste
       style={{ "--x": useMotionTemplate`${mouseX}px`, "--y": useMotionTemplate`${mouseY}px` } as WrapperStyle}
     >
       <div className="relative w-full overflow-hidden rounded-3xl border border-neutral-200 bg-white transition-colors duration-300 dark:border-neutral-800 dark:bg-neutral-900">
-        <div className="m-6 min-h-[400px] w-full">
+        <div className="m-6 min-h-[500px] w-full">
           <AnimatePresence mode="wait">
             <motion.div
               key={step}
@@ -273,12 +273,12 @@ function StepsNav({ steps: stepItems, current, onChange }: { steps: readonly Ste
 
 const defaultClasses = {
   img: "rounded-xl border border-neutral-200 dark:border-neutral-800 shadow-2xl shadow-black/10 dark:shadow-neutral-950/50",
-  step1img1: "w-[35%] left-5 top-[10%]",
-  step1img2: "w-[35%] right-5 top-[30%]",
-  step2img1: "w-[35%] left-5 top-[15%]",
-  step2img2: "w-[35%] right-5 top-[35%]",
-  step3img: "w-[70%] left-[15%] top-[15%]",
-  step4img: "w-[70%] left-[15%] top-[15%]",
+  step1img1: "w-[25%] left-5 top-[12%]",
+  step1img2: "w-[25%] right-5 top-[32%]",
+  step2img1: "w-[25%] left-5 top-[17%]",
+  step2img2: "w-[25%] right-5 top-[37%]",
+  step3img: "w-[50%] left-[25%] top-[17%]",
+  step4img: "w-[50%] left-[25%] top-[17%]",
 } as const
 
 export function FeatureCarousel({
