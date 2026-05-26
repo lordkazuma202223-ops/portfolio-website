@@ -62,24 +62,28 @@ const carouselSteps = [
     name: "Project 1",
     title: "Football Live Streaming Platform",
     description: "Built an ad-free live football streaming platform using SportSRC API with Next.js and Tailwind CSS. Features real-time match updates, score tracking, and responsive design.",
+    skills: ["Next.js", "Tailwind CSS", "SportSRC API", "TypeScript"],
   },
   {
     id: "2",
     name: "Project 2",
     title: "Contentful News Bot",
     description: "Automated news aggregation system targeting Myanmar diaspora in Singapore. Integrates with Contentful CMS, Telegram API, and RSS feeds for seamless content delivery.",
+    skills: ["Contentful", "Telegram API", "Python", "RSS Feeds", "Automated Workflows"],
   },
   {
     id: "3",
     name: "Project 3",
     title: "Portfolio Website",
     description: "Modern, responsive portfolio showcasing technical projects. Built with Next.js 14, TypeScript, and Tailwind CSS. Features smooth animations and dark mode support.",
+    skills: ["Next.js 14", "TypeScript", "Tailwind CSS", "Framer Motion", "Dark Mode"],
   },
   {
     id: "4",
     name: "Project 4",
     title: "AI-Powered Applications",
     description: "Leveraging modern AI tools and APIs to build intelligent applications. Focus on user-friendly interfaces and seamless integration with cutting-edge technology.",
+    skills: ["AI/ML", "API Integration", "User Interface", "Modern Tech Stack"],
   },
 ];
 

@@ -67,6 +67,7 @@ interface Step {
   name: string
   title: string
   description: string
+  skills?: string[]
 }
 
 // --- Constants ---
@@ -195,7 +196,7 @@ function FeatureCard({ step, steps, renderContent }: FeatureCardProps) {
     >
       <div className="relative w-full overflow-hidden rounded-3xl border border-neutral-200 bg-white transition-colors duration-300 dark:border-neutral-800 dark:bg-neutral-900">
         <div className="flex flex-col md:flex-row m-6 min-h-[500px] w-full gap-8">
-          <div className="flex w-full md:w-1/2 flex-col gap-4">
+          <div className="flex w-full md:w-1/2 flex-col gap-4 justify-center">
             <AnimatePresence mode="wait">
               <motion.div
                 key={step}
@@ -230,6 +231,23 @@ function FeatureCard({ step, steps, renderContent }: FeatureCardProps) {
                     {steps[step].description}
                   </p>
                 </motion.div>
+                {steps[step].skills && steps[step].skills.length > 0 && (
+                  <motion.div
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.2, duration: 0.3, ease: [0.22, 1, 0.36, 1]}}
+                    className="flex flex-wrap gap-2"
+                  >
+                    {steps[step].skills?.map((skill, index) => (
+                      <span
+                        key={index}
+                        className="rounded-full bg-slate-100 dark:bg-slate-800 px-3 py-1 text-sm font-medium text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </motion.div>
+                )}
               </motion.div>
             </AnimatePresence>
           </div>
