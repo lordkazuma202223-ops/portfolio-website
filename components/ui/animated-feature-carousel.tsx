@@ -251,9 +251,9 @@ function FeatureCard({ step, steps, renderContent }: FeatureCardProps) {
               </motion.div>
             </AnimatePresence>
           </div>
-          <div className="flex w-full md:w-1/2 relative">
+          <div className="flex w-full md:w-1/2 relative items-center justify-center bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-800/30 dark:to-slate-900/30 rounded-2xl overflow-hidden">
             <AnimatePresence mode="wait">
-                <motion.div key={step} {...ANIMATION_PRESETS.fadeInScale} className="w-full h-full relative">
+                <motion.div key={step} {...ANIMATION_PRESETS.fadeInScale} className="w-full h-full relative flex items-center justify-center p-6">
                     {renderContent()}
                 </motion.div>
             </AnimatePresence>
@@ -305,12 +305,12 @@ function StepsNav({ steps: stepItems, current, onChange }: { steps: readonly Ste
 
 const defaultClasses = {
   img: "rounded-xl border border-neutral-200 dark:border-neutral-800 shadow-2xl shadow-black/10 dark:shadow-neutral-950/50",
-  step1img1: "w-[25%] left-5 top-[12%]",
-  step1img2: "w-[25%] right-5 top-[32%]",
-  step2img1: "w-[25%] left-5 top-[17%]",
-  step2img2: "w-[25%] right-5 top-[37%]",
-  step3img: "w-[50%] left-[25%] top-[17%]",
-  step4img: "w-[50%] left-[25%] top-[17%]",
+  step1img1: "w-[35%] left-[8%] top-[20%]",
+  step1img2: "w-[35%] right-[8%] top-[45%]",
+  step2img1: "w-[35%] left-[8%] top-[25%]",
+  step2img2: "w-[35%] right-[8%] top-[50%]",
+  step3img: "w-[70%] left-[15%] top-[35%]",
+  step4img: "w-[70%] left-[15%] top-[35%]",
 } as const
 
 export function FeatureCarousel({
