@@ -117,37 +117,6 @@ export function ProjectsSection() {
             interval={6000}
           />
         </div>
-
-        {/* Project Cards Grid */}
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3" role="list">
-          {projects.map((project, index) => (
-            <article
-              key={index}
-              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm transition-all hover:scale-[1.02] hover:shadow-2xl hover:shadow-purple-500/20 hover:bg-white/10"
-              role="listitem"
-            >
-              <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-20 transition-opacity group-hover:opacity-40`} aria-hidden="true" />
-
-              <div className="relative p-8">
-                <h3 className="text-2xl font-bold mb-3 text-white group-hover:text-purple-200 transition-colors">
-                  {project.title}
-                </h3>
-                <p className="mb-6 text-gray-300 leading-relaxed">{project.description}</p>
-                <div className="flex flex-wrap gap-2" role="list" aria-label="Technologies used">
-                  {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="rounded-full bg-white/10 px-4 py-1.5 text-sm font-medium text-purple-200 backdrop-blur-sm"
-                      role="listitem"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </article>
-          ))}
-        </div>
       </div>
     </section>
   );
