@@ -85,30 +85,26 @@ const carouselSteps = [
 
 export function ProjectsSection() {
   return (
-    <section id="projects" className="py-32 px-4 relative overflow-hidden" aria-labelledby="projects-heading">
+    <section id="projects" className="py-16 px-4 relative overflow-hidden" aria-labelledby="projects-heading">
       {/* Projects background */}
       <div className="absolute inset-0 -z-10" aria-hidden="true">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/30 via-purple-900/20 to-pink-900/30" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-pink-500/10 via-transparent to-transparent" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-purple-500/10 via-transparent to-transparent" />
-        {/* Diagonal lines pattern */}
-        <div
-          className="absolute inset-0 opacity-5"
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-slate-900/20 to-purple-900/20" />
+        <div className="absolute inset-0 opacity-5"
           style={{
-            backgroundImage: `linear-gradient(45deg, #ffffff 1px, transparent 1px)`,
-            backgroundSize: "80px 80px",
+            backgroundImage: `radial-gradient(circle, #ffffff 1px, transparent 1px)`,
+            backgroundSize: "40px 40px",
           }}
         />
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="mb-16 text-center">
-          <h2 id="projects-heading" className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
+        <div className="mb-12">
+          <h2 id="projects-heading" className="text-4xl md:text-5xl font-bold">
+            <span className="bg-gradient-to-b from-slate-100 via-slate-300 to-slate-600 bg-clip-text text-transparent">
               Featured Work
             </span>
           </h2>
-          <div className="h-1 w-24 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mx-auto" />
+          <div className="h-1 w-24 bg-gradient-to-r from-slate-300 via-slate-400 to-slate-500 rounded-full mt-4" />
         </div>
 
         {/* Feature Carousel */}
