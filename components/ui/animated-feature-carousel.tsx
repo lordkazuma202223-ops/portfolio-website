@@ -32,20 +32,16 @@ interface CardProps {
 }
 
 interface ImageSet {
-  step1img1: StaticImageData
-  step1img2: StaticImageData
-  step2img1: StaticImageData
-  step2img2: StaticImageData
+  step1img: StaticImageData
+  step2img: StaticImageData
   step3img: StaticImageData
   step4img: StaticImageData
   alt: string
 }
 
 interface FeatureCarouselProps extends CardProps {
-  step1img1Class?: string
-  step1img2Class?: string
-  step2img1Class?: string
-  step2img2Class?: string
+  step1imgClass?: string
+  step2imgClass?: string
   step3imgClass?: string
   step4imgClass?: string
   image: ImageSet
@@ -157,7 +153,7 @@ const StepImage = forwardRef<HTMLImageElement, StepImageProps>(
         alt={alt}
         className={className}
         src={src}
-        style={{ position: "absolute", userSelect: "none", maxWidth: "unset", ...style }}
+        style={{ position: "relative", userSelect: "none", width: "100%", height: "100%", ...style }}
         {...props}
       />
     )
@@ -251,9 +247,9 @@ function FeatureCard({ step, steps, renderContent }: FeatureCardProps) {
               </motion.div>
             </AnimatePresence>
           </div>
-          <div className="flex w-full md:w-1/2 relative items-center justify-center bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-800/30 dark:to-slate-900/30 rounded-2xl overflow-hidden">
+          <div className="flex w-full md:w-1/2 relative items-center justify-center rounded-2xl overflow-hidden">
             <AnimatePresence mode="wait">
-                <motion.div key={step} {...ANIMATION_PRESETS.fadeInScale} className="w-full h-full relative flex items-center justify-center p-6">
+                <motion.div key={step} {...ANIMATION_PRESETS.fadeInScale} className="w-full h-full relative">
                     {renderContent()}
                 </motion.div>
             </AnimatePresence>
@@ -304,23 +300,19 @@ function StepsNav({ steps: stepItems, current, onChange }: { steps: readonly Ste
 }
 
 const defaultClasses = {
-  img: "rounded-xl border border-neutral-200 dark:border-neutral-800 shadow-2xl shadow-black/10 dark:shadow-neutral-950/50",
-  step1img1: "w-[35%] left-[8%] top-[20%]",
-  step1img2: "w-[35%] right-[8%] top-[45%]",
-  step2img1: "w-[35%] left-[8%] top-[25%]",
-  step2img2: "w-[35%] right-[8%] top-[50%]",
-  step3img: "w-[70%] left-[15%] top-[35%]",
-  step4img: "w-[70%] left-[15%] top-[35%]",
+  img: "w-full h-full object-cover rounded-2xl",
+  step1img: "",
+  step2img: "",
+  step3img: "",
+  step4img: "",
 } as const
 
 export function FeatureCarousel({
   image,
   steps: customSteps,
   interval = 5000,
-  step1img1Class = defaultClasses.step1img1,
-  step1img2Class = defaultClasses.step1img2,
-  step2img1Class = defaultClasses.step2img1,
-  step2img2Class = defaultClasses.step2img2,
+  step1imgClass = defaultClasses.step1img,
+  step2imgClass = defaultClasses.step2img,
   step3imgClass = defaultClasses.step3img,
   step4imgClass = defaultClasses.step4img,
   ...props
@@ -357,19 +349,9 @@ export function FeatureCarousel({
   const renderStepContent = () => {
     switch (step) {
       case 0:
-        return (
-          <div className="relative w-full h-full">
-            <AnimatedStepImage alt={image.alt} className={cn(defaultClasses.img, step1img1Class)} src={image.step1img1} preset="slideInLeft" />
-            <AnimatedStepImage alt={image.alt} className={cn(defaultClasses.img, step1img2Class)} src={image.step1img2} preset="slideInRight" delay={0.1} />
-          </div>
-        )
+        return <AnimatedStepImage alt={image.alt} className={cn(defaultClasses.img, step1imgClass)} src={image.step1img} preset="fadeInScale" />
       case 1:
-        return (
-          <div className="relative w-full h-full">
-            <AnimatedStepImage alt={image.alt} className={cn(defaultClasses.img, step2img1Class)} src={image.step2img1} preset="fadeInScale" />
-            <AnimatedStepImage alt={image.alt} className={cn(defaultClasses.img, step2img2Class)} src={image.step2img2} preset="fadeInScale" delay={0.1} />
-          </div>
-        )
+        return <AnimatedStepImage alt={image.alt} className={cn(defaultClasses.img, step2imgClass)} src={image.step2img} preset="fadeInScale" />
       case 2:
         return <AnimatedStepImage alt={image.alt} className={cn(defaultClasses.img, step3imgClass)} src={image.step3img} preset="fadeInScale" />
       case 3:
