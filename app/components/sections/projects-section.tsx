@@ -98,7 +98,7 @@ export function ProjectsSection() {
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="mb-12">
+        <div className="mb-10">
           <h2 id="projects-heading" className="text-4xl md:text-5xl font-bold">
             <span className="bg-gradient-to-b from-slate-100 via-slate-300 to-slate-600 bg-clip-text text-transparent">
               Featured Work

@@ -199,7 +199,7 @@ function FeatureCard({ children, step, steps }: { children: React.ReactNode; ste
               transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
             >
               <motion.div
-                className="text-sm font-semibold uppercase tracking-wider text-sky-600 dark:text-sky-500"
+                className="text-sm font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-300"
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.05, duration: 0.3, ease: [0.22, 1, 0.36, 1]}}
@@ -244,26 +244,22 @@ function StepsNav({ steps: stepItems, current, onChange }: { steps: readonly Ste
                             <button
                                 type="button"
                                 className={cn(
-                                    "group flex items-center gap-2.5 rounded-full px-3.5 py-1.5 text-sm font-medium transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-sky-500 dark:focus-visible:ring-offset-black",
-                                    isCurrent
-                                        ? "bg-sky-600 text-white dark:bg-sky-500"
+                                    "group flex items-center gap-2.5 rounded-full px-3.5 py-1.5 text-sm font-medium transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-slate-500 dark:focus-visible:ring-offset-black",
+                                    isCurrent 
+                                        ? "bg-slate-600 text-white dark:bg-slate-500" 
                                         : "bg-neutral-100 text-neutral-700 hover:bg-neutral-200 dark:bg-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-700"
                                 )}
                                 onClick={() => onChange(stepIdx)}
                             >
                                 <span className={cn(
                                     "flex h-5 w-5 shrink-0 items-center justify-center rounded-full transition-all duration-300",
-                                    isCompleted
-                                        ? "bg-sky-600 text-white dark:bg-sky-500"
-                                        : isCurrent
-                                            ? "bg-sky-400 text-sky-900 dark:bg-sky-400 dark:text-sky-900"
+                                    isCompleted 
+                                        ? "bg-slate-600 text-white dark:bg-slate-500" 
+                                        : isCurrent 
+                                            ? "bg-slate-400 text-slate-900 dark:bg-slate-400 dark:text-slate-900" 
                                             : "bg-neutral-200 text-neutral-700 group-hover:bg-neutral-300 dark:bg-neutral-700 dark:text-neutral-200 dark:group-hover:bg-neutral-600"
                                 )}>
-                                    {isCompleted ? (
-                                        <IconCheck className="h-3.5 w-3.5" />
-                                    ) : (
-                                        <span>{stepIdx + 1}</span>
-                                    )}
+                                    <span>{stepIdx + 1}</span>
                                 </span>
                                 <span className="hidden sm:inline-block">{step.name}</span>
                             </button>
