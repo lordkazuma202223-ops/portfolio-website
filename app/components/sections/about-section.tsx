@@ -2,7 +2,7 @@ import AnimatedTextCycle from "@/components/AnimatedTextCycle";
 
 export function AboutSection() {
   return (
-    <section id="about" className="py-16 px-4 relative overflow-hidden" aria-labelledby="about-heading">
+    <section id="about" className="min-h-screen py-16 px-4 relative overflow-hidden flex items-center" aria-labelledby="about-heading">
       {/* Background */}
       <div className="absolute inset-0 -z-10" aria-hidden="true">
         <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-slate-900/20 to-purple-900/20" />
